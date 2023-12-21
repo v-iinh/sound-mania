@@ -1,44 +1,51 @@
 const gameCanvas = document.getElementById("gameCanvas");
 const gameCtx = gameCanvas.getContext("2d");
 
-const rectangle1X = 0;
-const rectangle1Color = "#ff5d5d";
+const recY = [0, -15, -30, -45, -60];
 
-const rectangle2X = 50;
-const rectangle2Color = "#6ad1fe";
+const rectangles = [
+  { x: 0, y: getRandomY(), color: "#ff5d5d", velocity: 0 },
+  { x: 50, y: getRandomY(), color: "#6ad1fe", velocity: 0 },
+  { x: 100.05, y: getRandomY(), color: "#23cf57", velocity: 0 },
+  { x: 151, y: getRandomY(), color: "#fe781f", velocity: 0 },
+  { x: 201, y: getRandomY(), color: "#fffc5d", velocity: 0 },
+  { x: 251, y: getRandomY(), color: "#965dff", velocity: 0 }
+];
 
-const rectangle3X = 100.05;
-const rectangle3Color = "#23cf57";
-
-const rectangle4X = 151;
-const rectangle4Color = "#fe781f";
-
-const rectangle5X = 201;
-const rectangle5Color = "#fffc5d";
-
-const rectangle6X = 251;
-const rectangle6Color = "#965dff";
+function getRandomY() {
+  const randomIndex = Math.floor(Math.random() * recY.length);
+  return recY[randomIndex];
+}
 
 const rectangleWidth = 50;
 const rectangleHeight = 10;
-const rectangleY = 0;
+const gravity = 1.2;
 
-gameCtx.fillStyle = rectangle1Color;
-gameCtx.fillRect(rectangle1X, rectangleY, rectangleWidth, rectangleHeight);
+function drawRectangles() {
+  rectangles.forEach(rectangle => {
+    gameCtx.fillStyle = rectangle.color;
+    gameCtx.fillRect(rectangle.x, rectangle.y, rectangleWidth, rectangleHeight);
+  });
+}
 
-gameCtx.fillStyle = rectangle2Color;
-gameCtx.fillRect(rectangle2X, rectangleY, rectangleWidth, rectangleHeight);
+function updateRectangles() {
+    rectangles.forEach(rectangle => {
 
-gameCtx.fillStyle = rectangle3Color;
-gameCtx.fillRect(rectangle3X, rectangleY, rectangleWidth, rectangleHeight);
+      rectangle.velocity = gravity;
+  
+      rectangle.y += rectangle.velocity;
+  
+      if (rectangle.y > gameCanvas.height - rectangleHeight) {
+        rectangle.y = getRandomY();
+      }
+    });
+  }
 
-gameCtx.fillStyle = rectangle4Color;
-gameCtx.fillRect(rectangle4X, rectangleY, rectangleWidth, rectangleHeight);
+function gameLoop() {
+  gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
+  updateRectangles();
+  drawRectangles();
+  requestAnimationFrame(gameLoop);
+}
 
-gameCtx.fillStyle = rectangle5Color;
-gameCtx.fillRect(rectangle5X, rectangleY, rectangleWidth, rectangleHeight);
-
-gameCtx.fillStyle = rectangle6Color;
-gameCtx.fillRect(rectangle6X, rectangleY, 49, rectangleHeight);
-
-
+gameLoop();
