@@ -8,59 +8,57 @@ body{
 }
 
 .container {
-    position: relative;
-    margin: 0 auto; 
-    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -.7%;
 }
 
 #gameCanvas {
     background: black;
-    margin-top: -1%;
-    height: 99.5vh;
-    width: 92%;
+    margin-top: 0%;
+    height: 100vh;
+    width: 100%;
     border: 5px solid white;
 }
 
-.containBorder {
-    border-left: 558px solid white;
+hr {
+    margin: 0;
+    width: 100%; 
     height: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: white;
     position: absolute;
-    bottom: 14vh;
-}
+    bottom: 15%;
+  }
 
 .borderLine {
     border-left: 5px solid white;
-    height: 101vh;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: 0 10px; 
     position: absolute;
-    top: 0;
-    bottom: 0;
 }
 
 .borderLine1 { 
-    left: 15%; 
+    left: 16.666666%; 
 
 }
 .borderLine2 { 
-    left: 30%; 
+    left: 33.3333333%; 
 }
 
 .borderLine3 { 
-    left: 45%; 
+    left: 50%; 
 }
 
 .borderLine4 { 
-    left: 60%; 
+    left: 66.666666%; 
 }
 
 .borderLine5 { 
-    left: 75%; 
+    left: 83.333333%; 
 }
 
 .btnContainer {
@@ -71,48 +69,58 @@ body{
     bottom: 0;
     display: flex;
     align-items: end;
-    justify-content: center;
 }
 
 .btn1 {
-    margin-left: -48%;
-    margin-right: 6.5%;
-    margin-bottom: .5vh;
-    width: 12.35%;
-    height: 13%
+    width: 16.25%;
+    height: 14%;
+    margin-bottom: .4%;
+    margin-left: .35%;
+    border: 5px solid #ff5d5d;
+    background-color: black;
 }
 
 .btn2 {
-    margin-bottom: .5vh;
-    width: 12.35%;
-    height: 13%
+    width: 16.25%;
+    height: 14%;
+    margin-bottom: .4%;
+    margin-left: .45%;
+    border: 5px solid #6ad1fe;
+    background-color: black;
 }
 
 .btn3 {
-    margin-bottom: .5vh;
-    width: 12.35%;
-    height: 13%
+    width: 16.25%;
+    height: 14%;
+    margin-bottom: .4%;
+    margin-left: .4%;
+    border: 5px solid #23cf57;
+    background-color: black;
 }
 
 .btn4 {
-    margin-bottom: .5vh;
-    width: 12.35%;
-    height: 13%
+    width: 16.25%;
+    height: 14%;
+    margin-bottom: .4%;
+    margin-left: .4%;
+    border: 5px solid #fe781f;
+    background-color: black;
 }
 
 .btn5 {
-    margin-bottom: .5vh;
-    width: 12.35%;
-    height: 13%
+    width: 16.25%;
+    height: 14%;
+    margin-bottom: .4%;
+    margin-left: .45%;
+    border: 5px solid #fffc5d;
+    background-color: black;
 }
 
 .btn6 {
-    margin-bottom: .5vh;
-    width: 12.35%;
-    height: 13%
+    width: 15.95%;
+    height: 14%;
+    margin-bottom: .4%;
+    margin-left: .4%;
+    border: 5px solid #965dff;
+    background-color: black;
 }
-
-
-
-
-
