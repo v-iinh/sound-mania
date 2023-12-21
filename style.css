@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+*{
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 5vh;
+}
+
 body{
     margin: 0;
     background: black; 
@@ -21,6 +27,10 @@ body{
     height: 100vh;
     width: 100%;
     border: 5px solid white;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 hr {
@@ -29,6 +39,7 @@ hr {
     height: 5px;
     background-color: white;
     position: absolute;
+    display: flex;
     bottom: 15%;
   }
 
@@ -43,22 +54,27 @@ hr {
 
 .borderLine1 { 
     left: 16.666666%; 
+    position: absolute;
 
 }
 .borderLine2 { 
     left: 33.3333333%; 
+    position: absolute;
 }
 
 .borderLine3 { 
     left: 50%; 
+    position: absolute;
 }
 
 .borderLine4 { 
     left: 66.666666%; 
+    position: absolute;
 }
 
 .borderLine5 { 
     left: 83.333333%; 
+    position: absolute;
 }
 
 .btnContainer {
@@ -72,55 +88,61 @@ hr {
 }
 
 .btn1 {
-    width: 16.25%;
-    height: 14%;
-    margin-bottom: .4%;
-    margin-left: .35%;
-    border: 5px solid #ff5d5d;
+    width: 16.35%;
+    height: 14.2%;
+    margin-bottom: .39%;
+    margin-left: .32%;
+    border: 10px solid #ff5d5d;
+    color: #ff5d5d;
     background-color: black;
 }
 
 .btn2 {
-    width: 16.25%;
-    height: 14%;
-    margin-bottom: .4%;
-    margin-left: .45%;
-    border: 5px solid #6ad1fe;
+    width: 16.35%;
+    height: 14.2%;
+    margin-bottom: .39%;
+    margin-left: .32%;
+    border: 10px solid #6ad1fe;
+    color: #6ad1fe;
     background-color: black;
 }
 
 .btn3 {
-    width: 16.25%;
-    height: 14%;
-    margin-bottom: .4%;
-    margin-left: .4%;
-    border: 5px solid #23cf57;
+    width: 16.35%;
+    height: 14.2%;
+    margin-bottom: .39%;
+    margin-left: .32%;
+    border: 10px solid #23cf57;
+    color: #23cf57;
     background-color: black;
 }
 
 .btn4 {
-    width: 16.25%;
-    height: 14%;
-    margin-bottom: .4%;
-    margin-left: .4%;
-    border: 5px solid #fe781f;
+    width: 16.35%;
+    height: 14.2%;
+    margin-bottom: .39%;
+    margin-left: .32%;
+    border: 10px solid #fe781f;
+    color: #fe781f;
     background-color: black;
 }
 
 .btn5 {
-    width: 16.25%;
-    height: 14%;
-    margin-bottom: .4%;
-    margin-left: .45%;
-    border: 5px solid #fffc5d;
+    width: 16.35%;
+    height: 14.2%;
+    margin-bottom: .39%;
+    margin-left: .32%;
+    border: 10px solid #fffc5d;
+    color: #fffc5d;
     background-color: black;
 }
 
 .btn6 {
-    width: 15.95%;
-    height: 14%;
-    margin-bottom: .4%;
-    margin-left: .4%;
-    border: 5px solid #965dff;
+    width: 16%;
+    height: 14.2%;
+    margin-bottom: .39%;
+    margin-left: .32%;
+    border: 10px solid #965dff;
+    color: #965dff;
     background-color: black;
 }
