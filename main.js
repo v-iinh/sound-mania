@@ -1,6 +1,7 @@
 const gameCanvas = document.getElementById("gameCanvas");
 const gameCtx = gameCanvas.getContext("2d");
 let score = 0
+let combo = 0
 
 const keys = {
   s: {
@@ -19,6 +20,9 @@ const keys = {
       pressed: false
   },
   l: {
+      pressed: false
+  },
+  space: {
       pressed: false
   }
 }
@@ -40,18 +44,72 @@ function getRandomY() {
 
 const rectangleWidth = 50;
 const rectangleHeight = 10;
-let gravity = 1.2; 
+let gravity = 0; 
 
 document.getElementById("easy").addEventListener("click", function() {
     gravity = .6;
+    rectangles.forEach(function(rectangle) {
+      rectangle.y = 0;
+    });
+    document.getElementById("easy").style.color = "rgb(0, 255, 0)";
+    document.getElementById("medium").style.color = "white";
+    document.getElementById("hard").style.color = "white";
+    document.getElementById("menu").style.display = "none"; 
+
+    if (audio.paused) {
+      audio.play();
+      document.getElementById("playPauseIcon").className = "fas fa-pause";
+    } else {
+        audio.currentTime = 0;
+        audio.play();
+    }
+
+    score = 0 
+    document.getElementById("scoreText").innerHTML= "Score : 0";
 });
 
 document.getElementById("medium").addEventListener("click", function() {
     gravity = 1.2;
+    rectangles.forEach(function(rectangle) {
+      rectangle.y = -100;
+    });
+    document.getElementById("easy").style.color = "white";
+    document.getElementById("medium").style.color = "rgb(255, 251, 0)";
+    document.getElementById("hard").style.color = "white";
+    document.getElementById("menu").style.display = "none"; 
+
+    if (audio.paused) {
+      audio.play();
+      document.getElementById("playPauseIcon").className = "fas fa-pause";
+    } else {
+        audio.currentTime = 0;
+        audio.play();
+    }
+
+    score = 0 
+    document.getElementById("scoreText").innerHTML= "Score : 0";
 });
 
 document.getElementById("hard").addEventListener("click", function() {
     gravity = 1.8;
+    rectangles.forEach(function(rectangle) {
+      rectangle.y = -135;
+    });
+    document.getElementById("easy").style.color = "white";
+    document.getElementById("medium").style.color = "white";
+    document.getElementById("hard").style.color = "rgb(255, 0, 0)";
+    document.getElementById("menu").style.display = "none"; 
+
+    if (audio.paused) {
+      audio.play();
+      document.getElementById("playPauseIcon").className = "fas fa-pause";
+    } else {
+        audio.currentTime = 0;
+        audio.play();
+    }
+
+    score = 0 
+    document.getElementById("scoreText").innerHTML= "Score : 0";
 });
 
 function drawRectangles() {
@@ -180,6 +238,14 @@ function changeBtn6() {
   }
 }
 
+function menu(){
+  const btn1 = document.getElementById('menu');
+  btn1.style.display = "none";
+  gravity = 1.2
+  audio.play()
+  document.getElementById("playPauseIcon").className = "fas fa-pause";
+}
+
 function gameLoop() {
   gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
   updateRectangles();
@@ -215,6 +281,10 @@ window.addEventListener('keydown', (event) => {
           keys.l.pressed = true
           changeBtn6()
           break
+      case ' ': 
+          keys.space.pressed = true
+          menu()
+      break
   }
 })
 
@@ -249,10 +319,8 @@ function togglePlayPause() {
   if (audio.paused) {
       audio.play();
       playPauseIcon.className = "fas fa-pause";
-      changeFavicon("pause.png");
   } else {
       audio.pause();
       playPauseIcon.className = "fas fa-play";
-      changeFavicon("play.png");
   }
 }
