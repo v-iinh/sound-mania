@@ -2,6 +2,7 @@ const gameCanvas = document.getElementById("gameCanvas");
 const gameCtx = gameCanvas.getContext("2d");
 let score = 0
 let combo = 0
+let highestCombo = 0
 
 const keys = {
   s: {
@@ -66,6 +67,12 @@ document.getElementById("easy").addEventListener("click", function() {
 
     score = 0 
     document.getElementById("scoreText").innerHTML= "Score : 0";
+
+    combo = 0 
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+
+    highestCombo = 0 
+    document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 });
 
 document.getElementById("medium").addEventListener("click", function() {
@@ -88,6 +95,12 @@ document.getElementById("medium").addEventListener("click", function() {
 
     score = 0 
     document.getElementById("scoreText").innerHTML= "Score : 0";
+
+    combo = 0 
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+
+    highestCombo = 0 
+    document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 });
 
 document.getElementById("hard").addEventListener("click", function() {
@@ -110,6 +123,12 @@ document.getElementById("hard").addEventListener("click", function() {
 
     score = 0 
     document.getElementById("scoreText").innerHTML= "Score : 0";
+
+    combo = 0 
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+
+    highestCombo = 0 
+    document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 });
 
 function drawRectangles() {
@@ -141,10 +160,21 @@ function changeBtn1() {
   if(keys.s.pressed && rectangles[0].x == 0 && rectangles[0].y >= 0 && rectangles[0].y > 100){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo += 1
+    document.getElementById("comboText").innerHTML= "Current Combo : " + combo;
+
+    if (combo > highestCombo) {
+      highestCombo = combo;
+      document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
+    }
   } 
   else if (keys.s.pressed && rectangles[0].x == 0 && rectangles[0].y != (rectangles[0].y >= 0 && rectangles[0].y > 100)){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
   }
 }
 
@@ -159,10 +189,21 @@ function changeBtn2() {
   if(keys.d.pressed && rectangles[1].x == 50 && rectangles[1].y >= 0 && rectangles[1].y > 100){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo += 1
+    document.getElementById("comboText").innerHTML= "Current Combo : " + combo;
+
+    if (combo > highestCombo) {
+      highestCombo = combo;
+      document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
+    }
   }
   else if (keys.d.pressed && rectangles[1].x == 50 && rectangles[1].y != (rectangles[1].y >= 0 && rectangles[1].y > 100)){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
   }
 }
 
@@ -177,10 +218,21 @@ function changeBtn3() {
   if(keys.f.pressed && rectangles[2].x == 100.05 && rectangles[2].y >= 0 && rectangles[2].y > 100){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo += 1
+    document.getElementById("comboText").innerHTML= "Current Combo : " + combo;
+
+    if (combo > highestCombo) {
+      highestCombo = combo;
+      document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
+    }
   }
   else if (keys.f.pressed && rectangles[2].x == 100.05 && rectangles[2].y != (rectangles[2].y >= 0 && rectangles[2].y > 100)){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
   }
 }
 
@@ -195,10 +247,21 @@ function changeBtn4() {
   if(keys.j.pressed && rectangles[3].x == 151 && rectangles[3].y >= 0 && rectangles[3].y > 100){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo += 1
+    document.getElementById("comboText").innerHTML= "Current Combo : " + combo;
+
+    if (combo > highestCombo) {
+      highestCombo = combo;
+      document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
+    }
   }
   else if (keys.j.pressed && rectangles[3].x == 151 && rectangles[3].y != (rectangles[3].y >= 0 && rectangles[3].y > 100)){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
   }
 }
 
@@ -213,10 +276,21 @@ function changeBtn5() {
   if(keys.k.pressed && rectangles[4].x == 201 && rectangles[4].y >= 0 && rectangles[4].y > 100){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo += 1
+    document.getElementById("comboText").innerHTML= "Current Combo : " + combo;
+
+    if (combo > highestCombo) {
+      highestCombo = combo;
+      document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
+    }
   }
   else if (keys.k.pressed && rectangles[4].x == 201 && rectangles[4].y != (rectangles[4].y >= 0 && rectangles[4].y > 100)){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
   }
 }
 
@@ -231,10 +305,21 @@ function changeBtn6() {
   if(keys.l.pressed && rectangles[5].x == 251 && rectangles[5].y >= 0 && rectangles[5].y > 100){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo += 1
+    document.getElementById("comboText").innerHTML= "Current Combo : " + combo;
+
+    if (combo > highestCombo) {
+      highestCombo = combo;
+      document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
+    }
   }
   else if (keys.l.pressed && rectangles[5].x == 251 && rectangles[5].y != (rectangles[5].y >= 0 && rectangles[5].y > 100)){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
   }
 }
 
