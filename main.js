@@ -4,6 +4,9 @@ let score = 0
 let combo = 0
 let highestCombo = 0
 
+let difficulty = 139
+const notPress = [139.5, 139, 138]
+
 const keys = {
   s: {
       pressed: false
@@ -73,6 +76,8 @@ document.getElementById("easy").addEventListener("click", function() {
 
     highestCombo = 0 
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
+
+    difficulty = notPress[0]
 });
 
 document.getElementById("medium").addEventListener("click", function() {
@@ -101,6 +106,8 @@ document.getElementById("medium").addEventListener("click", function() {
 
     highestCombo = 0 
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
+
+    difficulty = notPress[1]
 });
 
 document.getElementById("hard").addEventListener("click", function() {
@@ -129,6 +136,8 @@ document.getElementById("hard").addEventListener("click", function() {
 
     highestCombo = 0 
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
+
+    difficulty = notPress[2]
 });
 
 function drawRectangles() {
@@ -147,6 +156,66 @@ function updateRectangles() {
       rectangle.y = getRandomY();
     }
   });
+}
+
+function changeBtn1a (){
+  if ((!keys.s.pressed && rectangles[0].x == 0 && rectangles[0].y >= difficulty)){
+    score -= 10
+    document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+  }
+}
+
+function changeBtn2a (){
+  if ((!keys.d.pressed && rectangles[1].x == 50 && rectangles[1].y >= difficulty)){
+    score -= 10
+    document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+  }
+}
+
+function changeBtn3a (){
+  if ((!keys.f.pressed && rectangles[2].x == 100.05 && rectangles[2].y >= difficulty)){
+    score -= 10
+    document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+  }
+}
+
+function changeBtn4a (){
+  if ((!keys.j.pressed && rectangles[3].x == 151 && rectangles[3].y >= difficulty)){
+    score -= 10
+    document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+  }
+}
+
+function changeBtn5a (){
+  if ((!keys.k.pressed && rectangles[4].x == 201 && rectangles[4].y >= difficulty)){
+    score -= 10
+    document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+  }
+}
+
+function changeBtn6a (){
+  if ((!keys.l.pressed && rectangles[5].x == 251 && rectangles[5].y >= difficulty)){
+    score -= 10
+    document.getElementById("scoreText").innerHTML= "Score : " + score;
+
+    combo = 0
+    document.getElementById("comboText").innerHTML= "Current Combo : 0";
+  }
 }
 
 function changeBtn1() {
@@ -336,6 +405,13 @@ function gameLoop() {
   updateRectangles();
   drawRectangles();
   requestAnimationFrame(gameLoop);
+
+  changeBtn1a();
+  changeBtn2a();
+  changeBtn3a(); 
+  changeBtn4a(); 
+  changeBtn5a(); 
+  changeBtn6a(); 
 }
 
 gameLoop();
