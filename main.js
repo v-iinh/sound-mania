@@ -40,7 +40,19 @@ function getRandomY() {
 
 const rectangleWidth = 50;
 const rectangleHeight = 10;
-const gravity = 1.2;
+let gravity = 1.2; 
+
+document.getElementById("easy").addEventListener("click", function() {
+    gravity = .6;
+});
+
+document.getElementById("medium").addEventListener("click", function() {
+    gravity = 1.2;
+});
+
+document.getElementById("hard").addEventListener("click", function() {
+    gravity = 1.8;
+});
 
 function drawRectangles() {
   rectangles.forEach(rectangle => {
@@ -228,3 +240,19 @@ window.addEventListener('keyup', (event) => {
           break
   }
 })
+
+function togglePlayPause() {
+  var audio = document.getElementById("audio");
+  var playPauseButton = document.getElementById("playPauseButton");
+  var playPauseIcon = document.getElementById("playPauseIcon");
+
+  if (audio.paused) {
+      audio.play();
+      playPauseIcon.className = "fas fa-pause";
+      changeFavicon("pause.png");
+  } else {
+      audio.pause();
+      playPauseIcon.className = "fas fa-play";
+      changeFavicon("play.png");
+  }
+}

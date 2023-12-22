@@ -1,12 +1,19 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <head>
     <title>Sound Mania</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="backgroundMusic" autoplay>
-        <source src="song.mp3" type="audio/mp3">
-    </audio>
+    <audio id="audio" src="song.mp3"></audio>
+    <button class="music" id="playPauseButton" onclick="togglePlayPause()">
+        <i id="playPauseIcon" class="fas fa-play"></i>
+    </button>
+    <div class="gameMode">
+        <button class="mode" id="easy">Easy</button>
+        <button class="mode" id="medium">Medium</button>
+        <button class="mode" id="hard">Hard</button>
+    </div>
     <div class="score" id="scoreText">Score :</div>
     <div class="container">
         <canvas id="gameCanvas"></canvas>
