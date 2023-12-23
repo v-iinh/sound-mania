@@ -237,6 +237,7 @@ function changeBtn1() {
       highestCombo = combo;
       document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
     }
+    rectangles[0].y = getRandomY()
   } 
   else if (keys.s.pressed && rectangles[0].x == 0 && rectangles[0].y != (rectangles[0].y >= 0 && rectangles[0].y > 100)){
     score -= 10
@@ -266,6 +267,7 @@ function changeBtn2() {
       highestCombo = combo;
       document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
     }
+    rectangles[1].y = getRandomY()
   }
   else if (keys.d.pressed && rectangles[1].x == 50 && rectangles[1].y != (rectangles[1].y >= 0 && rectangles[1].y > 100)){
     score -= 10
@@ -295,6 +297,7 @@ function changeBtn3() {
       highestCombo = combo;
       document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
     }
+    rectangles[2].y = getRandomY()
   }
   else if (keys.f.pressed && rectangles[2].x == 100.05 && rectangles[2].y != (rectangles[2].y >= 0 && rectangles[2].y > 100)){
     score -= 10
@@ -324,6 +327,7 @@ function changeBtn4() {
       highestCombo = combo;
       document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
     }
+    rectangles[3].y = getRandomY()
   }
   else if (keys.j.pressed && rectangles[3].x == 151 && rectangles[3].y != (rectangles[3].y >= 0 && rectangles[3].y > 100)){
     score -= 10
@@ -353,6 +357,7 @@ function changeBtn5() {
       highestCombo = combo;
       document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
     }
+    rectangles[4].y = getRandomY()
   }
   else if (keys.k.pressed && rectangles[4].x == 201 && rectangles[4].y != (rectangles[4].y >= 0 && rectangles[4].y > 100)){
     score -= 10
@@ -382,6 +387,7 @@ function changeBtn6() {
       highestCombo = combo;
       document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
     }
+    rectangles[5].y = getRandomY()
   }
   else if (keys.l.pressed && rectangles[5].x == 251 && rectangles[5].y != (rectangles[5].y >= 0 && rectangles[5].y > 100)){
     score -= 10
