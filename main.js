@@ -78,6 +78,8 @@ document.getElementById("easy").addEventListener("click", function() {
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
     difficulty = notPress[0]
+
+    musicTimer();
 });
 
 document.getElementById("medium").addEventListener("click", function() {
@@ -108,6 +110,8 @@ document.getElementById("medium").addEventListener("click", function() {
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
     difficulty = notPress[1]
+
+    musicTimer();
 });
 
 document.getElementById("hard").addEventListener("click", function() {
@@ -138,6 +142,8 @@ document.getElementById("hard").addEventListener("click", function() {
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
     difficulty = notPress[2]
+
+    musicTimer();
 });
 
 function drawRectangles() {
@@ -226,7 +232,7 @@ function changeBtn1() {
     btn1.style.backgroundColor = "black";
   }, 100);
 
-  if(keys.s.pressed && rectangles[0].x == 0 && rectangles[0].y >= 0 && rectangles[0].y > 100){
+  if(keys.s.pressed && rectangles[0].x == 0 && rectangles[0].y >= 0 && rectangles[0].y > 115){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
 
@@ -256,7 +262,7 @@ function changeBtn2() {
     btn1.style.backgroundColor = "black";
   }, 100);
 
-  if(keys.d.pressed && rectangles[1].x == 50 && rectangles[1].y >= 0 && rectangles[1].y > 100){
+  if(keys.d.pressed && rectangles[1].x == 50 && rectangles[1].y >= 0 && rectangles[1].y > 115){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
 
@@ -286,7 +292,7 @@ function changeBtn3() {
     btn1.style.backgroundColor = "black";
   }, 100);
 
-  if(keys.f.pressed && rectangles[2].x == 100.05 && rectangles[2].y >= 0 && rectangles[2].y > 100){
+  if(keys.f.pressed && rectangles[2].x == 100.05 && rectangles[2].y >= 0 && rectangles[2].y > 115){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
 
@@ -316,7 +322,7 @@ function changeBtn4() {
     btn1.style.backgroundColor = "black";
   }, 100);
 
-  if(keys.j.pressed && rectangles[3].x == 151 && rectangles[3].y >= 0 && rectangles[3].y > 100){
+  if(keys.j.pressed && rectangles[3].x == 151 && rectangles[3].y >= 0 && rectangles[3].y > 115){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
 
@@ -346,7 +352,7 @@ function changeBtn5() {
     btn1.style.backgroundColor = "black";
   }, 100);
 
-  if(keys.k.pressed && rectangles[4].x == 201 && rectangles[4].y >= 0 && rectangles[4].y > 100){
+  if(keys.k.pressed && rectangles[4].x == 201 && rectangles[4].y >= 0 && rectangles[4].y > 115){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
 
@@ -376,7 +382,7 @@ function changeBtn6() {
     btn1.style.backgroundColor = "black";
   }, 100);
 
-  if(keys.l.pressed && rectangles[5].x == 251 && rectangles[5].y >= 0 && rectangles[5].y > 100){
+  if(keys.l.pressed && rectangles[5].x == 251 && rectangles[5].y >= 0 && rectangles[5].y > 115){
     score += 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
 
@@ -491,3 +497,44 @@ function togglePlayPause() {
       playPauseIcon.className = "fas fa-play";
   }
 }
+
+var audio = document.getElementById('audio');
+var startTime;
+var duration;
+audio.addEventListener('timeupdate', function() {
+  if (!startTime) {
+    startTime = new Date().getTime();
+    duration = audio.duration;
+  }
+  var currentTime = new Date().getTime();
+  var elapsedTime = currentTime - startTime;
+  if (audio.currentTime >= duration) {
+    console.log('Audio finished playing');
+  } else {
+    console.log('Elapsed time: ' + (elapsedTime / 1000) + ' seconds');
+  }
+});
+
+function musicTimer() {
+  var audio = document.getElementById('audio');
+  var startTime;
+  var duration;
+
+  audio.addEventListener('timeupdate', function() {
+    if (!startTime) {
+      startTime = new Date().getTime();
+      duration = audio.duration;
+    }
+
+    var currentTime = new Date().getTime();
+    var elapsedTime = currentTime - startTime;
+
+    if (audio.currentTime >= duration) {
+      console.log('Audio finished playing');
+    } else {
+      console.log('Elapsed time: ' + (elapsedTime / 1000) + ' seconds');
+    }
+  });
+}
+
+musicTimer();
