@@ -29,13 +29,12 @@ body{
 
 .subText0 {
     font-size: 1.5em;
-    margin-bottom: -3%;
-    margin-top: .2%;
 }
 
 .subText1 {
     font-size: .7em;
     margin-bottom: 1%;
+    display: none;
 }
 
 .footer {
@@ -48,10 +47,11 @@ body{
     border: 5px solid white;
     color: white;
     text-align: center;
+    margin-bottom: .05%;
 }
 
 .container {
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-evenly;
     background: black;
@@ -95,4 +95,16 @@ body{
     text-align: center;
     flex-direction: column;
     color: #ff5d5d;
+}
+
+.before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+    border: 5px solid white;
+    height: 100vh;
 }
