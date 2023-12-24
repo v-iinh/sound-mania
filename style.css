@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+*{
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 5vh;
+}
+
+body{
+    margin: 0;
+    background: black; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.header {
+    position: absolute;
+    width: 99.4%;
+    background-color: black;
+    top: 0px; 
+    left: 0px; 
+    z-index: 2; 
+    border: 5px solid white;
+    color: white;
+    text-align: center;
+}
+
+.subText0 {
+    font-size: 1.5em;
+    margin-bottom: -3%;
+    margin-top: .2%;
+}
+
+.subText1 {
+    font-size: .7em;
+    margin-bottom: 1%;
+}
+
+.footer {
+    position: fixed;
+    width: 99.4%;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    border: 5px solid white;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: black;
+    width: 100%;
+    margin-top: 2.2%;
+  }
+
+.modePic1 {
+    border: 5px solid white;
+    width: 34%;
+    border-right: none;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #6ad1fe;
+}
+
+.modePic2 {
+    border: 5px solid white;
+    width: 34%;
+    border-right: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #965dff;
+}
+
+.modePic3 {
+    border: 5px solid white;
+    width: 34%;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #ff5d5d;
+}
