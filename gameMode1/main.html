@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<head>
+    <title>Sound Mania</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="audio" src="song.mp3"></audio>
+    <button class="music" id="playPauseButton" onclick="togglePlayPause()">
+        <i id="playPauseIcon" class="fas fa-play"></i>
+    </button>
+    <div class="gameMode">
+        <button class="mode" id="easy">Easy</button>
+        <button class="mode" id="medium">Medium</button>
+        <button class="mode" id="hard">Hard</button>
+    </div>
+    <div class="menu" id="menu">
+        <div>PRESS SPACE or LEVEL<br>TO START</div>
+        <div class="text1">Sound Mania, by Vinh Tran, is a vertical scrolling rhythm game. Press the keybinds precisely when a note approaches it to gain points. Gaining points consecutively adds 1 to your combo counter, and resets when you miss a note.</div>
+    </div>
+    <div class="endgame" id="endgame">
+        <div>FINAL RESULTS ABOVE</div>
+        <a href="index.html" class="fas fa-redo" id="restart-link"></a>
+    </div>       
+    <div class="score" id="scoreText">Score : 0</div>
+    <div class="comboDiv">
+        <div class="combo" id="comboText">Current Combo : 0</div>
+        <div class="combo" id="comboText1">Highest Combo : 0</div>
+    </div>
+    <div class="container">
+        <canvas id="gameCanvas"></canvas>
+        <div class="borderLine borderLine1"></div>
+        <div class="borderLine borderLine2"></div>
+        <div class="borderLine borderLine3"></div>
+        <div class="borderLine borderLine4"></div>
+        <div class="borderLine borderLine5"></div>
+        <hr>
+    </div>
+    <div class="btnContainer">
+        <button class="btn1" id="btn1">S</button>
+        <button class="btn2" id="btn2">D</button>
+        <button class="btn3" id="btn3">F</button>
+        <button class="btn4" id="btn4">J</button>
+        <button class="btn5" id="btn5">K</button>
+        <button class="btn6" id="btn6">L</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -78,8 +78,6 @@ document.getElementById("easy").addEventListener("click", function() {
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
     difficulty = notPress[0]
-
-    musicTimer();
 });
 
 document.getElementById("medium").addEventListener("click", function() {
@@ -110,8 +108,6 @@ document.getElementById("medium").addEventListener("click", function() {
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
     difficulty = notPress[1]
-
-    musicTimer();
 });
 
 document.getElementById("hard").addEventListener("click", function() {
@@ -142,8 +138,6 @@ document.getElementById("hard").addEventListener("click", function() {
     document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
     difficulty = notPress[2]
-
-    musicTimer();
 });
 
 function drawRectangles() {
@@ -425,7 +419,6 @@ function gameLoop() {
   changeBtn5a(); 
   changeBtn6a(); 
 }
-
 gameLoop();
 
 window.addEventListener('keydown', (event) => {
@@ -498,43 +491,14 @@ function togglePlayPause() {
   }
 }
 
-var audio = document.getElementById('audio');
-var startTime;
-var duration;
-audio.addEventListener('timeupdate', function() {
-  if (!startTime) {
-    startTime = new Date().getTime();
-    duration = audio.duration;
-  }
-  var currentTime = new Date().getTime();
-  var elapsedTime = currentTime - startTime;
-  if (audio.currentTime >= duration) {
-    console.log('Audio finished playing');
-  } else {
-    console.log('Elapsed time: ' + (elapsedTime / 1000) + ' seconds');
-  }
+var myAudio = document.getElementById("audio");
+myAudio.addEventListener("ended", function() {
+    rectangles[0].y = 0
+    rectangles[1].y = 0
+    rectangles[2].y = 0
+    rectangles[3].y = 0
+    rectangles[4].y = 0
+    rectangles[5].y = 0
+    gravity = 0
+    document.getElementById("endgame").style.display = "flex"; 
 });
-
-function musicTimer() {
-  var audio = document.getElementById('audio');
-  var startTime;
-  var duration;
-
-  audio.addEventListener('timeupdate', function() {
-    if (!startTime) {
-      startTime = new Date().getTime();
-      duration = audio.duration;
-    }
-
-    var currentTime = new Date().getTime();
-    var elapsedTime = currentTime - startTime;
-
-    if (audio.currentTime >= duration) {
-      console.log('Audio finished playing');
-    } else {
-      console.log('Elapsed time: ' + (elapsedTime / 1000) + ' seconds');
-    }
-  });
-}
-
-musicTimer();

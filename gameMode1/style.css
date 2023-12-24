@@ -30,6 +30,22 @@ body{
     flex-direction: column;
 }
 
+.endgame{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+    background-color: black;
+    text-align: center;
+    border: 5px solid white;
+    width: 100%;
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    flex-direction: column;
+}
+
 .text1 {
     font-size: .5em;
     margin-left: 20%;
@@ -232,4 +248,17 @@ hr {
     border: 10px solid #965dff;
     color: #965dff;
     background-color: black;
+}
+
+#restart-link {
+    text-decoration: none;
+    display: inline-block;
+    background-color: black; 
+    color: white;
+    padding: 5px 10px; 
+    margin-top: 1.4%;
+}
+
+#restart-link:hover {
+    color: darkgray;
 }
