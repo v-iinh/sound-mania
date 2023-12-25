@@ -4,7 +4,7 @@ const keys = {
     }
 };
 
-function menuClick(){
+function menu(){
     document.getElementById("menu").style.display = "none";
     togglePlayPause()
 }
@@ -24,6 +24,10 @@ window.addEventListener('keydown', (event) => {
         case ' ':
             keys.space.pressed = true;
             spaceKey();
+            break;
+        case 'Shift':
+            keys.space.pressed = true;
+            menu();
             break;
     }
 });
