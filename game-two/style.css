@@ -22,8 +22,7 @@ body{
     z-index: 6;
     background-color: black;
     text-align: center;
-    border-left: none;
-    border-right: 5px solid white;
+    border: none;
     width: 82.7%;
     height: 80vh;
     right: 0;

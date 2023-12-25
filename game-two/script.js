@@ -6,6 +6,7 @@ const keys = {
 
 function menuClick(){
     document.getElementById("menu").style.display = "none";
+    togglePlayPause()
 }
 
 function spaceKey() {
@@ -34,3 +35,17 @@ window.addEventListener('keyup', (event) => {
             break;
     }
 });
+
+function togglePlayPause() {
+    var audio = document.getElementById("audio");
+    var playPauseButton = document.getElementById("playPauseButton");
+    var playPauseIcon = document.getElementById("playPauseIcon");
+  
+    if (audio.paused) {
+        audio.play();
+        playPauseIcon.className = "fas fa-pause";
+    } else {
+        audio.pause();
+        playPauseIcon.className = "fas fa-play";
+    }
+  }
