@@ -22,15 +22,16 @@ body{
     z-index: 6;
     background-color: black;
     text-align: center;
-    border: 5px solid white;
     border-left: none;
+    border-right: 5px solid white;
     width: 82.7%;
+    height: 80vh;
     right: 0;
     color: white;
     padding-top: 2%;
     padding-bottom: 2%;
     flex-direction: column;
-    margin-top: 2%;
+    margin-top: 3.5%;
 }
 
 .endgame{
