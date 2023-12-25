@@ -55,7 +55,7 @@ document.getElementById("easy").addEventListener("click", function() {
     rectangles.forEach(function(rectangle) {
       rectangle.y = 0;
     });
-    document.getElementById("easy").style.color = "rgb(0, 255, 0)";
+    document.getElementById("easy").style.color = "#23cf57";
     document.getElementById("medium").style.color = "white";
     document.getElementById("hard").style.color = "white";
     document.getElementById("menu").style.display = "none"; 
@@ -86,7 +86,7 @@ document.getElementById("medium").addEventListener("click", function() {
       rectangle.y = -100;
     });
     document.getElementById("easy").style.color = "white";
-    document.getElementById("medium").style.color = "rgb(255, 251, 0)";
+    document.getElementById("medium").style.color = "#fffc5d";
     document.getElementById("hard").style.color = "white";
     document.getElementById("menu").style.display = "none"; 
 
@@ -117,7 +117,7 @@ document.getElementById("hard").addEventListener("click", function() {
     });
     document.getElementById("easy").style.color = "white";
     document.getElementById("medium").style.color = "white";
-    document.getElementById("hard").style.color = "rgb(255, 0, 0)";
+    document.getElementById("hard").style.color = "#ff5d5d";
     document.getElementById("menu").style.display = "none"; 
 
     if (audio.paused) {

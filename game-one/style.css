@@ -53,6 +53,12 @@ body{
     margin-top: 1%;
 }
 
+.text2 {
+    font-size: .5rem;
+    color: gray;
+    text-decoration: none;
+}
+
 .homepage{
     position: absolute;
     z-index: 8;
@@ -84,7 +90,7 @@ body{
 }
 
 #medium {
-    color: rgb(255, 251, 0);
+    color: #fffc5d;
 }
 
 .music {
