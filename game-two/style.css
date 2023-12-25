@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+*{
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 5vh;
+}
+
+body{
+    margin: 0;
+    background: black; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+    background-color: black;
+    text-align: center;
+    border: 5px solid white;
+    border-left: none;
+    width: 82.7%;
+    right: 0;
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.endgame{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+    background-color: black;
+    text-align: center;
+    border: 5px solid white;
+    width: 100%;
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    flex-direction: column;
+}
+
+.text1 {
+    font-size: .5em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1%;
+}
+
+.text2 {
+    font-size: .5rem;
+    color: gray;
+    text-decoration: none;
+}
+
+.homepage{
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    left: 0;
+    margin-top: .3%;
+    transform: scale(.7);
+    margin-left: .5%;
+
+}
+
+.homepage i.fas.fa-home {
+    color: white;
+}
+
+.gameMode{
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 7.5%;
+    margin-top: .1%;
+}
+
+.mode {
+    border: 0px;
+    background-color: black;
+    color: white;
+    font-size: .8em;
+}
+
+#medium {
+    color: #fffc5d;
+}
+
+.music {
+    position: absolute;
+    z-index: 4;
+    top: 0; 
+    left: 0;
+    border: 0px;
+    background-color: black;
+    color: white;
+    transform: scale(.7);
+    margin-top: .25%;
+    margin-left: 4%;
+}
+
+.score {
+    position: absolute;
+    width: 99.4%;
+    background-color: black;
+    top: 0px; 
+    left: 0px; 
+    z-index: 2; 
+    border: 5px solid white;
+    color: white;
+    text-align: center;
+}
+
+.comboDiv {
+    position: absolute;
+    background: none;
+    top: 0px; 
+    right: 0px;
+    z-index: 7; 
+    color: white;
+    padding-left: 1%;
+    padding-right: .7%;
+    margin-top: .27%;
+}
+
+.combo {
+    text-align: end;
+    font-size: .5em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -.7%;
+    z-index: 1;
+}
+
+#gameCanvas {
+    background: black;
+    margin-top: 0%;
+    height: 100vh;
+    width: 100%;
+    border: 5px solid white;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.borderLine {
+    border-left: 5px solid white;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+}
+
+.borderLine1 { 
+    left: 16.666666%; 
+    position: absolute;
+
+}
+
+.btnContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: end;
+    z-index: 3;
+}
+
+.btn1 {
+    position: relative;
+    width: 16.35%;
+    height: 92.1%;
+    margin-bottom: .3%;
+    margin-left: .32%;
+    border: 10px solid #ffb1e8;
+    color: #ffb1e8;
+    background-color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.btnText { 
+    position: absolute; 
+    z-index: 10;
+    transform: rotate(90deg);
+    white-space: nowrap;
+    letter-spacing: .9rem;
+    margin-top: 10%;
+}
+
+#restart-link {
+    text-decoration: none;
+    display: inline-block;
+    background-color: black; 
+    color: white;
+    padding: 5px 10px; 
+    margin-top: 1.4%;
+}
+
+#restart-link:hover {
+    color: darkgray;
+}
