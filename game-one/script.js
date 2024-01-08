@@ -400,7 +400,9 @@ function changeBtn6() {
 
 function menu(){
   const btn1 = document.getElementById('menu');
+  const btn2 = document.getElementById('endgame');
   btn1.style.display = "none";
+  btn2.style.display = "none";
   gravity = 1.2
   audio.play()
   document.getElementById("playPauseIcon").className = "fas fa-pause";
