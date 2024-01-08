@@ -59,6 +59,14 @@ function drawRectangles() {
     });
   }
 
+  function menu(){
+    const btn1 = document.getElementById('menu');
+    btn1.style.display = "none";
+    gravity = 1.2
+    audio.play()
+    document.getElementById("playPauseIcon").className = "fas fa-pause";
+  }
+
   function gameLoop() {
     gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
     updateRectangles();
