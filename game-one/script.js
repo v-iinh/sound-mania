@@ -59,6 +59,7 @@ document.getElementById("easy").addEventListener("click", function() {
     document.getElementById("medium").style.color = "white";
     document.getElementById("hard").style.color = "white";
     document.getElementById("menu").style.display = "none"; 
+    document.getElementById("endgame").style.display = "none"; 
 
     if (audio.paused) {
       audio.play();
@@ -89,6 +90,7 @@ document.getElementById("medium").addEventListener("click", function() {
     document.getElementById("medium").style.color = "#fffc5d";
     document.getElementById("hard").style.color = "white";
     document.getElementById("menu").style.display = "none"; 
+    document.getElementById("endgame").style.display = "none"; 
 
     if (audio.paused) {
       audio.play();
@@ -118,7 +120,8 @@ document.getElementById("hard").addEventListener("click", function() {
     document.getElementById("easy").style.color = "white";
     document.getElementById("medium").style.color = "white";
     document.getElementById("hard").style.color = "#ff5d5d";
-    document.getElementById("menu").style.display = "none"; 
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("endgame").style.display = "none";  
 
     if (audio.paused) {
       audio.play();
@@ -403,6 +406,8 @@ function menu(){
   const btn2 = document.getElementById('endgame');
   btn1.style.display = "none";
   btn2.style.display = "none";
+  score = 0 
+  document.getElementById("scoreText").innerHTML= "Score : " + score;
   gravity = 1.2
   audio.play()
   document.getElementById("playPauseIcon").className = "fas fa-pause";
