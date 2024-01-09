@@ -7,11 +7,6 @@ const keys = {
     }
 };
 
-function menu(){
-    document.getElementById("menu").style.display = "none";
-    togglePlayPause()
-}
-
 function spaceKey() {
     if (keys.space.pressed) {
         const btn1 = document.getElementById("btn1");
@@ -22,24 +17,24 @@ function spaceKey() {
     }
 }
 
-const recY = [0, -15, -30, -45, -60];
+const recX = [34, 84, 134.05, 235, 285];
 const rectangles = [
-  { x: 0, y: 0, color: "#ff5d5d", velocity: 0 },
-  { x: 50, y: 0, color: "#6ad1fe", velocity: 0 },
-  { x: 100.05, y: 0, color: "#23cf57", velocity: 0 },
-  { x: 151, y: 0, color: "#fe781f", velocity: 0 },
-  { x: 201, y: 0, color: "#fffc5d", velocity: 0 },
-  { x: 251, y: 0, color: "#965dff", velocity: 0 }
+  { x: -204, y: 0, color: "#ff5d5d", velocity: 0 },
+  { x: -170, y: 0, color: "#6ad1fe", velocity: 0 },
+  { x: -136, y: 0, color: "#23cf57", velocity: 0 },
+  { x: -102, y: 0, color: "#fe781f", velocity: 0 },
+  { x: -68, y: 0, color: "#fffc5d", velocity: 0 },
+  { x: -34, y: 0, color: "#965dff", velocity: 0 }
 ];
 
-function getRandomY() {
-  const randomIndex = Math.floor(Math.random() * recY.length);
-  return recY[randomIndex];
+function getRandomX() {
+  const randomIndex = Math.floor(Math.random() * recX.length);
+  return recX[randomIndex];
 }
 
 const rectangleWidth = 15;
-const rectangleHeight = 20; //window.innerheight
-let gravity = 0.5; 
+const rectangleHeight = window.innerHeight;
+let gravity = 0; 
 
 function drawRectangles() {
     rectangles.forEach(rectangle => {
@@ -51,17 +46,21 @@ function drawRectangles() {
   function updateRectangles() {
     rectangles.forEach(rectangle => {
       rectangle.velocity = gravity;
-      rectangle.y += rectangle.velocity;
+      rectangle.x += rectangle.velocity;
   
-      if (rectangle.y > gameCanvas.height - rectangleHeight) {
-        rectangle.y = getRandomY();
+      if (rectangle.x > gameCanvas.width - rectangleWidth) {
+        rectangle.x = getRandomX();
       }
     });
   }
 
   function menu(){
     const btn1 = document.getElementById('menu');
+    const btn2 = document.getElementById('endgame');
     btn1.style.display = "none";
+    btn2.style.display = "none";
+    score = 0 
+    document.getElementById("scoreText").innerHTML= "Score : " + score;
     gravity = 1.2
     audio.play()
     document.getElementById("playPauseIcon").className = "fas fa-pause";
