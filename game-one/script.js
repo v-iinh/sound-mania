@@ -5,7 +5,7 @@ let combo = 0
 let highestCombo = 0
 
 let difficulty = 139
-const notPress = [139.5, 139, 138]
+const notPress = [139.5, 138.7, 138]
 
 const keys = {
   s: {
