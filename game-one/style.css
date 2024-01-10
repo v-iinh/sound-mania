@@ -173,6 +173,7 @@ hr {
     justify-content: space-between;
     align-items: center;
     position: absolute;
+    z-index: 10;
 }
 
 .borderLine1 { 
@@ -213,8 +214,8 @@ hr {
 
 .btn1 {
     width: 16.35%;
-    height: 14.2%;
-    margin-bottom: .39%;
+    height: 14.5%;
+    margin-bottom: .3%;
     margin-left: .32%;
     border: 10px solid #ff5d5d;
     color: #ff5d5d;
@@ -223,8 +224,8 @@ hr {
 
 .btn2 {
     width: 16.35%;
-    height: 14.2%;
-    margin-bottom: .39%;
+    height: 14.5%;
+    margin-bottom: .3%;
     margin-left: .32%;
     border: 10px solid #6ad1fe;
     color: #6ad1fe;
@@ -233,8 +234,8 @@ hr {
 
 .btn3 {
     width: 16.35%;
-    height: 14.2%;
-    margin-bottom: .39%;
+    height: 14.5%;
+    margin-bottom: .3%;
     margin-left: .32%;
     border: 10px solid #23cf57;
     color: #23cf57;
@@ -243,8 +244,8 @@ hr {
 
 .btn4 {
     width: 16.35%;
-    height: 14.2%;
-    margin-bottom: .39%;
+    height: 14.5%;
+    margin-bottom: .3%;
     margin-left: .32%;
     border: 10px solid #fe781f;
     color: #fe781f;
@@ -253,8 +254,8 @@ hr {
 
 .btn5 {
     width: 16.35%;
-    height: 14.2%;
-    margin-bottom: .39%;
+    height: 14.5%;
+    margin-bottom: .3%;
     margin-left: .32%;
     border: 10px solid #fffc5d;
     color: #fffc5d;
@@ -263,8 +264,8 @@ hr {
 
 .btn6 {
     width: 16%;
-    height: 14.2%;
-    margin-bottom: .39%;
+    height: 14.5%;
+    margin-bottom: .3%;
     margin-left: .32%;
     border: 10px solid #965dff;
     color: #965dff;
