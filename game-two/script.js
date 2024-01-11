@@ -142,12 +142,21 @@ function updateRectangles() {
 
 function changeBtn1a (){
   if ((!keys.space.pressed && 
+<<<<<<< HEAD
     (rectangles[0].x >= 0 && rectangles[0].x > 288)||
     (rectangles[1].x >= 0 && rectangles[1].x > 288)||
     (rectangles[2].x >= 0 && rectangles[2].x > 288)||
     (rectangles[3].x >= 0 && rectangles[3].x > 288)||
     (rectangles[4].x >= 0 && rectangles[4].x > 288)||
     (rectangles[5].x >= 0 && rectangles[5].x > 288)
+=======
+    (rectangles[0].x >= 0 && rectangles[0].x >= 283.75) ||
+    (rectangles[1].x >= 0 && rectangles[1].x >= 283.75) ||
+    (rectangles[2].x >= 0 && rectangles[2].x >= 283.75) ||
+    (rectangles[3].x >= 0 && rectangles[3].x >= 283.75) ||
+    (rectangles[4].x >= 0 && rectangles[4].x >= 283.75) ||
+    (rectangles[5].x >= 0 && rectangles[5].x >= 283.75)
+>>>>>>> 9b2688928e63d26ece089c23f05b3bbd4fffa82c
   )){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
@@ -242,7 +251,7 @@ function gameLoop() {
   drawRectangles();
   requestAnimationFrame(gameLoop);
 
-  changeBtn1a(); 
+  // changeBtn1a(); 
 }
 gameLoop();
 
@@ -250,7 +259,11 @@ window.addEventListener('keydown', (event) => {
     switch (event.key) {
         case ' ':
             keys.space.pressed = true;
+<<<<<<< HEAD
             changeBtn1(); 
+=======
+            changeBtn1();
+>>>>>>> 9b2688928e63d26ece089c23f05b3bbd4fffa82c
             break;
         case 'Shift':
             keys.space.pressed = true;
@@ -281,7 +294,7 @@ function togglePlayPause() {
     }
   }
 
-  var myAudio = document.getElementById("audio");
+var myAudio = document.getElementById("audio");
 myAudio.addEventListener("ended", function() {
     rectangles[0].y = 0
     rectangles[1].y = 0
