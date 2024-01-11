@@ -25,7 +25,7 @@ function getRandomX() {
   return recX[randomIndex];
 }
 
-const rectangleWidth = 15;
+const rectangleWidth = 10;
 const rectangleHeight = window.innerHeight;
 let gravity = 0; 
 
@@ -142,12 +142,12 @@ function updateRectangles() {
 
 function changeBtn1a (){
   if ((!keys.space.pressed && 
-    (rectangles[0].x == 0 && rectangles[0].x >= 283.75) ||
-    (rectangles[1].x == 0 && rectangles[1].x >= 283.75) ||
-    (rectangles[2].x == 0 && rectangles[2].x >= 283.75) ||
-    (rectangles[3].x == 0 && rectangles[3].x >= 283.75) ||
-    (rectangles[4].x == 0 && rectangles[4].x >= 283.75) ||
-    (rectangles[5].x == 0 && rectangles[5].x >= 283.75)
+    (rectangles[0].x >= 0 && rectangles[0].x > 288)||
+    (rectangles[1].x >= 0 && rectangles[1].x > 288)||
+    (rectangles[2].x >= 0 && rectangles[2].x > 288)||
+    (rectangles[3].x >= 0 && rectangles[3].x > 288)||
+    (rectangles[4].x >= 0 && rectangles[4].x > 288)||
+    (rectangles[5].x >= 0 && rectangles[5].x > 288)
   )){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
@@ -183,7 +183,30 @@ function changeBtn1() {
       highestCombo = combo;
       document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
     }
-    rectangles[0].y = getRandomX()
+
+    if((rectangles[0].x >= 0 && rectangles[0].x > 263)){
+      rectangles[0].x = getRandomX()
+    }
+
+    if((rectangles[1].x >= 0 && rectangles[1].x > 263)){
+      rectangles[1].x = getRandomX()
+    }
+
+    if((rectangles[2].x >= 0 && rectangles[2].x > 263)){
+      rectangles[2].x = getRandomX()
+    }
+
+    if((rectangles[3].x >= 0 && rectangles[3].x > 263)){
+      rectangles[3].x = getRandomX()
+    }
+
+    if((rectangles[4].x >= 0 && rectangles[4].x > 263)){
+      rectangles[4].x = getRandomX()
+    }
+
+    if((rectangles[5].x >= 0 && rectangles[5].x > 263)){
+      rectangles[5].x = getRandomX()
+    }
   } 
   else if (keys.space.pressed && (
     (rectangles[0].x != (rectangles[0].x >= 0 && rectangles[0].x > 263))||
@@ -223,21 +246,10 @@ function gameLoop() {
 }
 gameLoop();
 
-function spaceKey() {
-    if (keys.space.pressed) {
-        const btn1 = document.getElementById("btn1");
-        btn1.style.backgroundColor = "#ffb1e8";
-        setTimeout(function () {
-          btn1.style.backgroundColor = "black";
-        }, 100);
-    }
-}
-
 window.addEventListener('keydown', (event) => {
     switch (event.key) {
         case ' ':
             keys.space.pressed = true;
-            spaceKey();
             changeBtn1(); 
             break;
         case 'Shift':
