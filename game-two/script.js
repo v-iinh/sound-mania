@@ -142,12 +142,12 @@ function updateRectangles() {
 
 function changeBtn1a (){
   if ((!keys.space.pressed && 
-    (rectangles[0].x == 0 && rectangles[0].x >= 283.75) ||
-    (rectangles[1].x == 0 && rectangles[1].x >= 283.75) ||
-    (rectangles[2].x == 0 && rectangles[2].x >= 283.75) ||
-    (rectangles[3].x == 0 && rectangles[3].x >= 283.75) ||
-    (rectangles[4].x == 0 && rectangles[4].x >= 283.75) ||
-    (rectangles[5].x == 0 && rectangles[5].x >= 283.75)
+    (rectangles[0].x >= 0 && rectangles[0].x >= 283.75) ||
+    (rectangles[1].x >= 0 && rectangles[1].x >= 283.75) ||
+    (rectangles[2].x >= 0 && rectangles[2].x >= 283.75) ||
+    (rectangles[3].x >= 0 && rectangles[3].x >= 283.75) ||
+    (rectangles[4].x >= 0 && rectangles[4].x >= 283.75) ||
+    (rectangles[5].x >= 0 && rectangles[5].x >= 283.75)
   )){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
@@ -219,26 +219,15 @@ function gameLoop() {
   drawRectangles();
   requestAnimationFrame(gameLoop);
 
-  changeBtn1a(); 
+  // changeBtn1a(); 
 }
 gameLoop();
-
-function spaceKey() {
-    if (keys.space.pressed) {
-        const btn1 = document.getElementById("btn1");
-        btn1.style.backgroundColor = "#ffb1e8";
-        setTimeout(function () {
-          btn1.style.backgroundColor = "black";
-        }, 100);
-    }
-}
 
 window.addEventListener('keydown', (event) => {
     switch (event.key) {
         case ' ':
             keys.space.pressed = true;
-            spaceKey();
-            changeBtn1(); 
+            changeBtn1();
             break;
         case 'Shift':
             keys.space.pressed = true;
@@ -269,7 +258,7 @@ function togglePlayPause() {
     }
   }
 
-  var myAudio = document.getElementById("audio");
+var myAudio = document.getElementById("audio");
 myAudio.addEventListener("ended", function() {
     rectangles[0].y = 0
     rectangles[1].y = 0
