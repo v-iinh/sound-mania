@@ -7,17 +7,24 @@ let highestCombo = 0
 const keys = {
     space: {
         pressed: false
-    }
+    },
+    shift: {
+      pressed: false
+  },
 };
 
-const recX = [-25, -50, -75, -100, -125, -150, -175, -200, -225, -250, -270, -300, -325, -350, -375, -400, -425, -450];
+const recX = [];
+for (let i = 0; i <= 280; i += 5) {
+  recX.push(-i);
+}
+
 const rectangles = [
-  { x: -15, y: 0, color: "#ff5d5d", velocity: 0 },
-  { x: -45, y: 0, color: "#6ad1fe", velocity: 0 },
-  { x: -75, y: 0, color: "#23cf57", velocity: 0 },
-  { x: -105, y: 0, color: "#fe781f", velocity: 0 },
-  { x: -135, y: 0, color: "#fffc5d", velocity: 0 },
-  { x: -165, y: 0, color: "#965dff", velocity: 0 }
+  { x: -20, y: 0, color: "#ff5d5d", velocity: 0 },
+  { x: -60, y: 0, color: "#6ad1fe", velocity: 0 },
+  { x: -100, y: 0, color: "#23cf57", velocity: 0 },
+  { x: -140, y: 0, color: "#fe781f", velocity: 0 },
+  { x: -180, y: 0, color: "#fffc5d", velocity: 0 },
+  { x: -220, y: 0, color: "#965dff", velocity: 0 }
 ];
 
 function getRandomX() {
@@ -31,9 +38,9 @@ let gravity = 0;
 
 document.getElementById("easy").addEventListener("click", function() {
   gravity = 1;
-  rectangles.forEach(function(rectangle) {
-    // rectangle.y = 0;
-  });
+  // rectangles.forEach(function(rectangle) {
+  //   rectangle.y = 0;
+  // });
   document.getElementById("easy").style.color = "#23cf57";
   document.getElementById("medium").style.color = "white";
   document.getElementById("hard").style.color = "white";
@@ -62,9 +69,9 @@ document.getElementById("easy").addEventListener("click", function() {
 
 document.getElementById("medium").addEventListener("click", function() {
   gravity = 1.5;
-  rectangles.forEach(function(rectangle) {
-    // rectangle.y = -100;
-  });
+  // rectangles.forEach(function(rectangle) {
+  //   rectangle.y = -100;
+  // });
   document.getElementById("easy").style.color = "white";
   document.getElementById("medium").style.color = "#fffc5d";
   document.getElementById("hard").style.color = "white";
@@ -142,21 +149,12 @@ function updateRectangles() {
 
 function changeBtn1a (){
   if ((!keys.space.pressed && 
-<<<<<<< HEAD
-    (rectangles[0].x >= 0 && rectangles[0].x > 288)||
-    (rectangles[1].x >= 0 && rectangles[1].x > 288)||
-    (rectangles[2].x >= 0 && rectangles[2].x > 288)||
-    (rectangles[3].x >= 0 && rectangles[3].x > 288)||
-    (rectangles[4].x >= 0 && rectangles[4].x > 288)||
-    (rectangles[5].x >= 0 && rectangles[5].x > 288)
-=======
-    (rectangles[0].x >= 0 && rectangles[0].x >= 283.75) ||
-    (rectangles[1].x >= 0 && rectangles[1].x >= 283.75) ||
-    (rectangles[2].x >= 0 && rectangles[2].x >= 283.75) ||
-    (rectangles[3].x >= 0 && rectangles[3].x >= 283.75) ||
-    (rectangles[4].x >= 0 && rectangles[4].x >= 283.75) ||
-    (rectangles[5].x >= 0 && rectangles[5].x >= 283.75)
->>>>>>> 9b2688928e63d26ece089c23f05b3bbd4fffa82c
+    (rectangles[0].x >= 0 && rectangles[0].x >= 289) ||
+    (rectangles[1].x >= 0 && rectangles[1].x >= 289) ||
+    (rectangles[2].x >= 0 && rectangles[2].x >= 289) ||
+    (rectangles[3].x >= 0 && rectangles[3].x >= 289) ||
+    (rectangles[4].x >= 0 && rectangles[4].x >= 289) ||
+    (rectangles[5].x >= 0 && rectangles[5].x >= 289)
   )){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
@@ -167,6 +165,7 @@ function changeBtn1a (){
 }
 
 function changeBtn1() {
+  const menuScore = document.getElementById('menu');
   const btn1 = document.getElementById("btn1");
   btn1.style.backgroundColor = "#ffb1e8";
 
@@ -217,7 +216,7 @@ function changeBtn1() {
       rectangles[5].x = getRandomX()
     }
   } 
-  else if (keys.space.pressed && (
+  else if (keys.space.pressed && (menuScore.style.display === none) && (
     (rectangles[0].x != (rectangles[0].x >= 0 && rectangles[0].x > 263))||
     (rectangles[1].x != (rectangles[1].x >= 0 && rectangles[1].x > 263))||
     (rectangles[2].x != (rectangles[2].x >= 0 && rectangles[2].x > 263))||
@@ -238,11 +237,12 @@ function menu(){
   const btn2 = document.getElementById('endgame');
   btn1.style.display = "none";
   btn2.style.display = "none";
-  score = 0 
-  document.getElementById("scoreText").innerHTML= "Score : " + score;
-  gravity = 1.5
-  audio.play()
-  document.getElementById("playPauseIcon").className = "fas fa-pause";
+  if (keys.shift.pressed) {
+    var mediumButton = document.getElementById("medium");
+    if (mediumButton) {
+      mediumButton.click();
+    }
+  }
 }
 
 function gameLoop() {
@@ -251,7 +251,7 @@ function gameLoop() {
   drawRectangles();
   requestAnimationFrame(gameLoop);
 
-  // changeBtn1a(); 
+  changeBtn1a(); 
 }
 gameLoop();
 
@@ -259,14 +259,10 @@ window.addEventListener('keydown', (event) => {
     switch (event.key) {
         case ' ':
             keys.space.pressed = true;
-<<<<<<< HEAD
-            changeBtn1(); 
-=======
             changeBtn1();
->>>>>>> 9b2688928e63d26ece089c23f05b3bbd4fffa82c
             break;
         case 'Shift':
-            keys.space.pressed = true;
+            keys.shift.pressed = true;
             menu();
             break;
     }
