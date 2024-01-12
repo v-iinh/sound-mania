@@ -14,7 +14,7 @@ const keys = {
 };
 
 const recX = [];
-for (let i = 0; i <= 280; i += 5) {
+for (let i = 0; i <= 250; i += 1) {
   recX.push(-i);
 }
 
@@ -28,9 +28,13 @@ const rectangles = [
 ];
 
 function getRandomX() {
-  const randomIndex = Math.floor(Math.random() * recX.length);
-  return recX[randomIndex];
+  let newRandomX;
+  do {
+    newRandomX = recX[Math.floor(Math.random() * recX.length)];
+  } while (rectangles.some(rectangle => Math.abs(newRandomX - rectangle.x) < rectangleWidth));
+  return newRandomX;
 }
+
 
 const rectangleWidth = 10;
 const rectangleHeight = window.innerHeight;
