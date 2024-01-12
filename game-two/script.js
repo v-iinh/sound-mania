@@ -37,10 +37,15 @@ const rectangleHeight = window.innerHeight;
 let gravity = 0; 
 
 document.getElementById("easy").addEventListener("click", function() {
-  gravity = 1;
-  // rectangles.forEach(function(rectangle) {
-  //   rectangle.y = 0;
-  // });
+  gravity = 1.5;
+
+  rectangles[0].x = -20;
+  rectangles[1].x = -60;
+  rectangles[2].x = -100;
+  rectangles[3].x = -140;
+  rectangles[4].x = -180;
+  rectangles[5].x = -220; 
+
   document.getElementById("easy").style.color = "#23cf57";
   document.getElementById("medium").style.color = "white";
   document.getElementById("hard").style.color = "white";
@@ -68,10 +73,15 @@ document.getElementById("easy").addEventListener("click", function() {
 });
 
 document.getElementById("medium").addEventListener("click", function() {
-  gravity = 1.5;
-  // rectangles.forEach(function(rectangle) {
-  //   rectangle.y = -100;
-  // });
+  gravity = 2;
+
+  rectangles[0].x = -20;
+  rectangles[1].x = -60;
+  rectangles[2].x = -100;
+  rectangles[3].x = -140;
+  rectangles[4].x = -180;
+  rectangles[5].x = -220; 
+
   document.getElementById("easy").style.color = "white";
   document.getElementById("medium").style.color = "#fffc5d";
   document.getElementById("hard").style.color = "white";
@@ -99,10 +109,15 @@ document.getElementById("medium").addEventListener("click", function() {
 });
 
 document.getElementById("hard").addEventListener("click", function() {
-  gravity = 2;
-  rectangles.forEach(function(rectangle) {
-    // rectangle.y = -135;
-  });
+  gravity = 2.5;
+
+  rectangles[0].x = -20;
+  rectangles[1].x = -60;
+  rectangles[2].x = -100;
+  rectangles[3].x = -140;
+  rectangles[4].x = -180;
+  rectangles[5].x = -220; 
+
   document.getElementById("easy").style.color = "white";
   document.getElementById("medium").style.color = "white";
   document.getElementById("hard").style.color = "#ff5d5d";
@@ -165,7 +180,6 @@ function changeBtn1a (){
 }
 
 function changeBtn1() {
-  const menuScore = document.getElementById('menu');
   const btn1 = document.getElementById("btn1");
   btn1.style.backgroundColor = "#ffb1e8";
 
@@ -216,7 +230,7 @@ function changeBtn1() {
       rectangles[5].x = getRandomX()
     }
   } 
-  else if (keys.space.pressed && (menuScore.style.display === none) && (
+  else if (keys.space.pressed && (
     (rectangles[0].x != (rectangles[0].x >= 0 && rectangles[0].x > 263))||
     (rectangles[1].x != (rectangles[1].x >= 0 && rectangles[1].x > 263))||
     (rectangles[2].x != (rectangles[2].x >= 0 && rectangles[2].x > 263))||
