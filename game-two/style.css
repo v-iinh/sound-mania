@@ -225,3 +225,14 @@ body{
 #restart-link:hover {
     color: darkgray;
 }
+
+hr {
+    margin: 0;
+    width: 7.65%; 
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+  }
