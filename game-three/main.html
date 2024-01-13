@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<head>
+    <title>Sound Mania</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="../assets/favicon.png" rel="icon">
+</head>
+<body>
+    <div class="homepage">
+        <a href="../index.html">
+            <i class="fas fa-home"></i>
+        </a>
+    </div>
+    <audio id="audio" src="song.mp3"></audio>
+    <button class="music" id="playPauseButton" onclick="togglePlayPause()">
+        <i id="playPauseIcon" class="fas fa-play"></i>
+    </button>
+    <div class="gameMode">
+        <button class="mode" id="easy">Easy</button>
+        <button class="mode" id="medium">Medium</button>
+        <button class="mode" id="hard">Hard</button>
+    </div>
+    <div class="menu" id="menu">
+        <div>Press SPACE or LEVEL<br>To Start</div>       
+        <div class="text1">Sound Mania, by Vinh Tran, is a vertical scrolling rhythm game. Press the keybinds precisely when a note approaches it to gain points. Gaining points consecutively adds 1 to your combo counter, and resets when you miss a note.</div>
+        <div>
+            <a class="text2" href="https://www.youtube.com/watch?v=9nembheTWno&ab_channel=PRXSXNTFXTURE" target="_blank">Song Credits</a>
+        </div>
+    </div>
+    <div class="endgame" id="endgame">
+        <div>FINAL RESULTS ABOVE</div>
+        <a href="../index.html" class="fas fa-redo" id="restart-link"></a>
+    </div>       
+    <div class="score" id="scoreText">Score : 0</div>
+    <div class="comboDiv">
+        <div class="combo" id="comboText">Current Combo : 0</div>
+        <div class="combo" id="comboText1">Highest Combo : 0</div>
+    </div>
+    <div class="container">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    <script src="mouse.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
