@@ -20,7 +20,7 @@ Dot.prototype.draw = function() {
  this.node.style.top = this.y + "px";
 };
 
-for (var i = 0; i < 500; i++) {
+for (var i = 0; i < 1000; i++) {
  var d = new Dot();
  dots.push(d);
 }
