@@ -4,6 +4,9 @@ let score = 0
 let combo = 0
 let highestCombo = 0
 
+let difficulty = 289
+const notPress = [289, 289, 287.75]
+
 const keys = {
     space: {
         pressed: false
@@ -73,7 +76,7 @@ document.getElementById("easy").addEventListener("click", function() {
   highestCombo = 0 
   document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
-  // difficulty = notPress[0]
+  difficulty = notPress[0]
 });
 
 document.getElementById("medium").addEventListener("click", function() {
@@ -109,7 +112,7 @@ document.getElementById("medium").addEventListener("click", function() {
   highestCombo = 0 
   document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
-  // difficulty = notPress[1]
+  difficulty = notPress[1]
 });
 
 document.getElementById("hard").addEventListener("click", function() {
@@ -145,7 +148,7 @@ document.getElementById("hard").addEventListener("click", function() {
   highestCombo = 0 
   document.getElementById("comboText1").innerHTML= "Highest Combo : 0";
 
-  // difficulty = notPress[2]
+  difficulty = notPress[2]
 });
 
 function drawRectangles() {
@@ -168,12 +171,12 @@ function updateRectangles() {
 
 function changeBtn1a (){
   if ((!keys.space.pressed && 
-    (rectangles[0].x >= 0 && rectangles[0].x >= 289) ||
-    (rectangles[1].x >= 0 && rectangles[1].x >= 289) ||
-    (rectangles[2].x >= 0 && rectangles[2].x >= 289) ||
-    (rectangles[3].x >= 0 && rectangles[3].x >= 289) ||
-    (rectangles[4].x >= 0 && rectangles[4].x >= 289) ||
-    (rectangles[5].x >= 0 && rectangles[5].x >= 289)
+    (rectangles[0].x >= 0 && rectangles[0].x >= difficulty) ||
+    (rectangles[1].x >= 0 && rectangles[1].x >= difficulty) ||
+    (rectangles[2].x >= 0 && rectangles[2].x >= difficulty) ||
+    (rectangles[3].x >= 0 && rectangles[3].x >= difficulty) ||
+    (rectangles[4].x >= 0 && rectangles[4].x >= difficulty) ||
+    (rectangles[5].x >= 0 && rectangles[5].x >= difficulty)
   )){
     score -= 10
     document.getElementById("scoreText").innerHTML= "Score : " + score;
@@ -234,7 +237,9 @@ function changeBtn1() {
       rectangles[5].x = getRandomX()
     }
   } 
-  else if (keys.space.pressed && (
+  else if (keys.space.pressed && 
+    document.getElementById("menu").style.display == 'none' &&
+    document.getElementById("endgame").style.display == 'none' && (
     (rectangles[0].x != (rectangles[0].x >= 0 && rectangles[0].x > 263))||
     (rectangles[1].x != (rectangles[1].x >= 0 && rectangles[1].x > 263))||
     (rectangles[2].x != (rectangles[2].x >= 0 && rectangles[2].x > 263))||
@@ -310,12 +315,12 @@ function togglePlayPause() {
 
 var myAudio = document.getElementById("audio");
 myAudio.addEventListener("ended", function() {
-    rectangles[0].y = 0
-    rectangles[1].y = 0
-    rectangles[2].y = 0
-    rectangles[3].y = 0
-    rectangles[4].y = 0
-    rectangles[5].y = 0
+    rectangles[0].x = -20;
+    rectangles[1].x = -60;
+    rectangles[2].x = -100;
+    rectangles[3].x = -140;
+    rectangles[4].x = -180;
+    rectangles[5].x = -220; 
     gravity = 0
     document.getElementById("endgame").style.display = "flex"; 
 });

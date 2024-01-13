@@ -41,12 +41,15 @@ body{
     z-index: 6;
     background-color: black;
     text-align: center;
-    border: 5px solid white;
-    width: 100%;
+    border: none;
+    width: 82.7%;
+    height: 80vh;
     color: white;
     padding-top: 2%;
     padding-bottom: 2%;
     flex-direction: column;
+    margin-top: 3.5%;
+    margin-right: 6.5%;
 }
 
 .text1 {

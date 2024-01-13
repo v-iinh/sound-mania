@@ -1,11 +1,11 @@
 const keys = {
-    space: {
+    enter: {
         pressed: false
     }
 };
 
-function spaceKey() {
-    if (keys.space.pressed) {
+function enterKey() {
+    if (keys.enter.pressed) {
         document.getElementById("before").style.display = "none";
         document.getElementById("container").style.display = "flex";
         document.getElementById("subText1").style.display = "block";
@@ -14,17 +14,17 @@ function spaceKey() {
 
 window.addEventListener('keydown', (event) => {
     switch (event.key) {
-        case ' ':
-            keys.space.pressed = true;
-            spaceKey();
+        case 'Enter':
+            keys.enter.pressed = true;
+            enterKey();
             break;
     }
 });
 
 window.addEventListener('keyup', (event) => {
     switch (event.key) {
-        case ' ':
-            keys.space.pressed = false;
+        case 'Enter':
+            keys.enter.pressed = false;
             break;
     }
 });
