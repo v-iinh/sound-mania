@@ -10,14 +10,27 @@ canvas.height = window.innerHeight;
 let difficulty = 4
 const notPress = [2, 4, 6]
 
+const teleportDelays = [500, 1000, 1500, 2000, 2500, 3000];
 const rectangles = [
-  { x: 135, y: 390, color: "#ff5d5d", size: 200, teleporting: false, teleportDelay: 500 },
-  { x: 390, y: 390, color: "#6ad1fe", size: 200, teleporting: false, teleportDelay: 1000 },
-  { x: 650, y: 390, color: "#23cf57", size: 200, teleporting: false, teleportDelay: 1500 },
-  { x: 905, y: 390, color: "#fe781f", size: 200, teleporting: false, teleportDelay: 2000 },
-  { x: 1150, y: 390, color: "#fffc5d", size: 200, teleporting: false, teleportDelay: 2500 },
-  { x: 1400, y: 390, color: "#965dff", size: 200, teleporting: false, teleportDelay: 3000 }
+  { x: 135, y: 390, color: "#ff5d5d", size: 200, teleporting: false, teleportDelay: teleportDelays[Math.floor(Math.random() * teleportDelays.length)] },
+  { x: 390, y: 390, color: "#6ad1fe", size: 200, teleporting: false, teleportDelay: teleportDelays[Math.floor(Math.random() * teleportDelays.length)] },
+  { x: 650, y: 390, color: "#23cf57", size: 200, teleporting: false, teleportDelay: teleportDelays[Math.floor(Math.random() * teleportDelays.length)] },
+  { x: 905, y: 390, color: "#fe781f", size: 200, teleporting: false, teleportDelay: teleportDelays[Math.floor(Math.random() * teleportDelays.length)] },
+  { x: 1150, y: 390, color: "#fffc5d", size: 200, teleporting: false, teleportDelay: teleportDelays[Math.floor(Math.random() * teleportDelays.length)] },
+  { x: 1400, y: 390, color: "#965dff", size: 200, teleporting: false, teleportDelay: teleportDelays[Math.floor(Math.random() * teleportDelays.length)] }
 ];
+
+function centerRectangles() {
+  const totalWidth = rectangles.length * rectangles[0].size;
+  const padding = (canvas.width - totalWidth) / (rectangles.length + 1);
+
+  rectangles.forEach((rectangle, index) => {
+    rectangle.x = padding + (rectangle.size / 2) + index * (rectangle.size + padding);
+    rectangle.y = canvas.height / 2;
+  });
+}
+centerRectangles();
+
 
 document.getElementById("easy").addEventListener("click", function() {
   document.getElementById("easy").style.color = "#23cf57";
@@ -71,6 +84,7 @@ document.getElementById("easy").addEventListener("click", function() {
   rectangles[4].teleporting = false;
   rectangles[5].teleporting = false;
 
+  centerRectangles();
   difficulty = notPress[0]
 });
 
@@ -126,6 +140,7 @@ document.getElementById("medium").addEventListener("click", function() {
   rectangles[4].teleporting = false;
   rectangles[5].teleporting = false;
 
+  centerRectangles();
   difficulty = notPress[1]
 });
 
@@ -181,6 +196,7 @@ document.getElementById("hard").addEventListener("click", function() {
   rectangles[4].teleporting = false;
   rectangles[5].teleporting = false;
 
+  centerRectangles();
   difficulty = notPress[2]
 });
 
@@ -293,6 +309,9 @@ function handleClick(event) {
         highestCombo = combo;
         document.getElementById("comboText1").innerHTML = "Highest Combo : " + highestCombo;
       }
+
+      rectangle.x = Math.random() * (canvas.width - size) + size / 2;
+      rectangle.y = Math.random() * (canvas.height - size) + size / 2;
       clickedOnSquare = true;
     }
   });
